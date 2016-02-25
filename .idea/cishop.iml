@@ -4,15 +4,5 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHP">
-        <CLASSES>
-          <root url="file://D:/Program Files (x86)/xampp/php/pear" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://D:/Program Files (x86)/xampp/php/pear" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>
