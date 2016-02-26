@@ -16,7 +16,7 @@
 </h1>
 
 <div class="main-div">
-<form method="post" action="brand.php" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<form method="post" action="<?php echo site_url('admin/brand/insert');?>" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
 <table cellspacing="1" cellpadding="3" width="100%">
   <tbody><tr>
     <td class="label">品牌名称</td>
@@ -62,7 +62,8 @@
 
 
 <div id="footer">
-	版权所有 &copy; 2006-2013 传智播客 - PHP培训 - </div>
+	版权所有 &copy; 2006-2013 
+ - PHP培训 - </div>
 </div>
 
 </body>
