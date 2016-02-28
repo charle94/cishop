@@ -12,8 +12,8 @@ class Goodstype_model extends CI_Model{
     public  function add_goodstype($data){
         return $this->db->insert(self::TBL_GT,$data);
     }
-    //获取商品类型
-    public function list_goodstype($limit,$offset){
+    //获取商品类型分页使用
+    public function list_goodstype($limit ,$offset){
         //获取分页数据
         $query = $this->db->limit($limit,$offset)->get(self::TBL_GT);
         //第一个为记录数第二个参数为偏移量
@@ -22,5 +22,10 @@ class Goodstype_model extends CI_Model{
     //统计商品类型总数
     public function count_goodstype(){
         return $this->db->count_all(self::TBL_GT);
+    }
+    //获取全部商品类型 属性添加使用
+    public function  get_goodstype(){
+        $query = $this->db->get(self::TBL_GT);
+        return $query->result_array();
     }
 }
