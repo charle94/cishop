@@ -12,4 +12,8 @@ class Attribute_model extends CI_Model{
     public function add_attrs($data){
         return $this->db->insert(self::TBL_ATTR,$data);
     }
+    public function list_attrs(){
+        $query = $this->db->get(self::TBL_ATTR);
+        return $query->result_array();
+    }
 }

@@ -14,7 +14,8 @@ class Attribute extends Admin_Controller{
     }
     const TBL_ATTR = 'attribute';
     public function index(){
-        $this->load->view('attribute_list.html');
+        $data['attrs'] = $this->attribute_model->list_attrs();
+        $this->load->view('attribute_list.html',$data);
     }
     public function add(){
         //获取商品类型
@@ -39,6 +40,23 @@ class Attribute extends Admin_Controller{
             //表单验证规则通过
             $data['attr_name'] = $this->input->post('attr_name',true);
             $data['type_id'] = $this->input->post('type_id',true);
+            $data['attr_type'] = $this->input->post('attr_type',true);
+            $data['attr_input_type'] = $this->input->post('attr_input_type',true);
+            $data['sort_order'] = $this->input->post('sort_order',true);
+            $data['attr_value'] = $this->input->post('attr_values',true);
+            if($this->attribute_model->add_attrs($data)){
+                //ok
+                $data['message'] = "插入成功";
+                $data['url'] = site_url('admin/attribute/index');
+                $data['wait'] = 3;
+                $this->load->view('message.html',$data);
+            }else{
+                //失败
+                $data['message'] = "插入失败";
+                $data['url'] = site_url('admin/attribute/add');
+                $data['wait'] = 3;
+                $this->load->view('message.html',$data);
+            }
         }
 
     }
